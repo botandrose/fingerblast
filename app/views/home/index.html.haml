@@ -1,11 +1,14 @@
 #slideshow
   #title Fingerblast!
   #counter
-  #image= image_tag "board.jpg"
+  #image
+  #boards
+    %p= link_to image_tag("metolius3d.jpg", :data => { :board_id => 0 }), "#"
+    %p= link_to image_tag("compact_wood.jpg", :data => { :board_id => 1 }), "#"
   %section
     %p
-      %button(data-difficulty="0") Beginner
+      %button(data-difficulty-index="0") Beginner
     %p
-      %button(data-difficulty="1") Intermediate
+      %button(data-difficulty-index="1") Intermediate
     %p
-      %button(data-difficulty="2") Advanced
+      %button(data-difficulty-index="2") Advanced
