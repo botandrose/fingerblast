@@ -49,3 +49,4 @@ Fingerblast.data =
     "5 pull-ups deep edges (7), without dropping off, bump up to round slopers (3) & dead hang till failure"
     "8 fast pull-ups, jugs (1) (keeping form perfect), dead hang round sloper to failure (fighting hard!)"
   ]
+  600: null
