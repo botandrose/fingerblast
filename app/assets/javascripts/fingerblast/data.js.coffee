@@ -74,5 +74,31 @@ Fingerblast.data = [
       "20 seconds straight arm hang using only 2 fingers on 3 Finger Pockets 3 power pull-ups (use weights or helper for resistance, should just be able to do 3 pulls)"
       "Maximum slightly bent arm hang, Large Slope (go 'til failure) no rest maximum straight arm hang - Large Slope"
     ]
+  ],
+  [
+    [
+      "3 pulls Medium Edge"
+      "10 sec. hang Round Sloper, 2 pulls Medium Edge 20 second"
+      "15 sec. hang Small Edge, 2 pulls 3 Finger Pocket"
+      "15 sec. hang Jugs, 3 pulls Medium Edge"
+      "20 sec. hang Round Sloper, 3 pulls 3 Finger Pocket"
+      "10 sec. hang Medium Edge, 2 pulls Small Edge"
+      "10 sec. hang Jugs, 4 pulls Round Sloper"
+      "5 pulls Medium Edge"
+      "3 pulls Jugs"
+      "Max. Hang Round Sloper"
+    ],
+    [
+      "6 pulls Rounded Sloper"
+      "20 second hang Medium Edge, 3 Pulls Jugs"
+      "20 sec. hang Small Edge, 3 pulls 3 Finger Pocket"
+      "25 sec. hang Round Sloper, 5 pulls Large Edge"
+      "25 sec. hang Large Edge, 3 pulls Medium Edge"
+      "30 sec. Hang Round Sloper, 5 pulls Small Edge"
+      "20 sec. hang Large Edge, 3 pulls 1 3/8\" 2 Finger Pocket"
+      "20 sec. hang Medium Edge, 3 pulls 1 1/2\" 2 Finger Pocket"
+      "15 sec. hang Round Sloper, 3 pulls Jugs"
+      "Max. Hang Round Sloper"
+    ]
   ]
 ]
