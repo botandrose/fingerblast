@@ -9,3 +9,9 @@ gem "coffee-rails"
 gem "uglifier"
 
 gem "jquery-rails"
+
+group "test" do
+  gem "cucumber-rails"
+  gem "rspec-rails"
+  gem "poltergeist"
+end
