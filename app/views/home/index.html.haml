@@ -3,3 +3,11 @@
   #counter
   #image= image_tag "board.jpg", :width => 600
   %section
+    %form
+      = radio_button_tag :difficulty, 0, :checked => true
+      = label_tag :difficulty_0, "Beginner"
+      = radio_button_tag :difficulty, 1
+      = label_tag :difficulty_1, "Intermediate"
+      = radio_button_tag :difficulty, 3
+      = label_tag :difficulty_2, "Advanced"
+      %button Start!

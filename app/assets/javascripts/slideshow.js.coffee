@@ -1,9 +1,8 @@
 window.Fingerblast = {}
 
 class Fingerblast.Slideshow
-  constructor: (@e, @data) ->
+  constructor: (@e, @data, @difficultyIndex) ->
     @counter = -1
-    @difficultyIndex = 0
     @audio = new Audio("/audios/whistle.mp3")
     window.setInterval (=> @tick()), 1000
 
