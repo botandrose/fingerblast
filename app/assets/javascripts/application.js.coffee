@@ -3,7 +3,7 @@
 #= require data
 
 $ ->
-  $("form").live "submit", (e) ->
+  $("button").live "click", (e) ->
     e.preventDefault()
-    difficulty = parseInt $("input:checked").val()
+    difficulty = parseInt $(this).data("difficulty")
     new Fingerblast.Slideshow $("#slideshow"), Fingerblast.data, difficulty
