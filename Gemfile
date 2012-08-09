@@ -10,8 +10,12 @@ gem "uglifier"
 
 gem "jquery-rails"
 
+group "test", "development" do
+  gem "konacha"
+  gem "poltergeist"
+end
+
 group "test" do
   gem "cucumber-rails"
   gem "rspec-rails"
-  gem "poltergeist"
 end
