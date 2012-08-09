@@ -7,6 +7,9 @@
 require 'cucumber/rails'
 require 'capybara'
 require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new app, :phantomjs => "/usr/local/phantomjs-1.6.1-linux-i686-dynamic/bin/phantomjs"
+end
 Capybara.default_driver = :poltergeist
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In

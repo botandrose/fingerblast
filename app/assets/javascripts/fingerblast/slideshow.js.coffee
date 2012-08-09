@@ -3,7 +3,7 @@ class Fingerblast.Slideshow
     @counter = -1
     @roundLength = 60
     @slideIndex = 0
-    @audio = new Audio("/audios/whistle.mp3")
+    @whistle = new Fingerblast.Whistle()
 
     @originalMarkup = @e.find("section").html()
     @tick()
@@ -18,7 +18,7 @@ class Fingerblast.Slideshow
       isNewSlide = @counter % @roundLength == 0
       if isNewSlide
         @e.find("section").html @data[@slideIndex]
-        @audio.play()
+        @whistle.play()
     else
       window.clearInterval @interval
       @done()
