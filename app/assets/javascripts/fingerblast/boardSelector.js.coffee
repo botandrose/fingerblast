@@ -9,7 +9,7 @@ class Fingerblast.BoardSelector
       e.preventDefault()
       @selectBoard $(e.currentTarget).find("img")
 
-    $("button").live "click", (e) =>
+    $("section button").live "click", (e) =>
       e.preventDefault()
       @startSlideshow $(e.currentTarget).data("difficulty-index")
 

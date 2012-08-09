@@ -10,4 +10,6 @@
 
   %body
     = yield
+
+    = javascript_include_tag "test_helper" if Rails.env.test?
     = javascript_include_tag "application"
