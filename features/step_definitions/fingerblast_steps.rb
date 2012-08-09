@@ -10,20 +10,24 @@ When /^I choose the "(.*?)" difficulty$/ do |difficulty|
   click_on difficulty
 end
 
-When /^I press "(.*?)"$/ do |button|
-  click_on button
+When /^I press the restart button$/ do
+  click_on "Fingerblast again"
 end
 
 When /^time advances by (\d+) seconds$/ do |seconds|
   page.driver.evaluate_script "window.clock.tick(#{seconds.to_i * 1000});"
 end
 
-Then /^I should see "(.*?)" as the current step$/ do |text|
+Then /^the current step should be "(.*?)"$/ do |text|
   page.should have_css("section:contains('#{text}')")
 end
 
-Then /^I should see "(.*?)" as the countdown$/ do |text|
+Then /^the countdown should be "(.*?)"$/ do |text|
   page.should have_css("#counter:contains('#{text}')")
+end
+
+Then /^I should see the success screen$/ do
+  page.should have_content("Master Fingerblaster!")
 end
 
 Then /^I should see "(.*?)"$/ do |text|
