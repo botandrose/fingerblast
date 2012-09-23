@@ -36,12 +36,15 @@ Fingerblast.Router = Ember.Router.extend
             router.get('boardController').connectOutlet('success')
 
         difficulty: Ember.Route.extend
-          route: '/difficulties/:difficulty_id'
+          route: '/difficulties/:difficultyId'
           connectOutlets: (router, difficulty) ->
-            if typeof(difficulty) == "string"
-              difficulty = router.get("boardController").get("content").get("difficulties").find((diff) -> diff.id == difficulty)
             router.get('boardController').connectOutlet('difficulty', difficulty)
             router.transitionTo('step', 1) unless difficulty.get("currentStep")?
+          serialize: (router, difficulty) ->
+            difficultyId: difficulty.id
+          deserialize: (router, urlParams) ->
+            router.get("boardController.content.difficulties").find (difficulty) ->
+              difficulty.id == urlParams.difficultyId
 
           index: Ember.Route.extend
             route: '/'

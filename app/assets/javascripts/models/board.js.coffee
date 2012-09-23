@@ -1,11 +1,7 @@
 Fingerblast.Board = Ember.Object.extend().reopenClass(
-
   all: ->
-    [
-      Fingerblast.Board.create id: "metolius3d", title: "Metolius 3D"
-      Fingerblast.Board.create id: "compact_wood", title: "Compact Wood"
-      Fingerblast.Board.create id: "pureforce", title: "Pure Force"
-    ]
+    Fingerblast.data.boards.map (props) ->
+      Fingerblast.Board.create().setProperties(props)
 
   find: (id) ->
     @all().find (board) -> board.id == id
@@ -17,5 +13,8 @@ Fingerblast.Board = Ember.Object.extend().reopenClass(
   ).property()
 
   difficulties: (->
-    Fingerblast.Difficulty.all()
-  ).property()
+    Fingerblast.data.difficulties.filter( (difficulty) =>
+      difficulty.boardId == @id
+    ).map (props) ->
+      Fingerblast.Difficulty.create().setProperties(props)
+  ).property("id")

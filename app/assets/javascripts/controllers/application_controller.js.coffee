@@ -1,1 +1,1 @@
-Fingerblast.ApplicationController = Ember.Controller.extend()
+Fingerblast.ApplicationController = Ember.ObjectController.extend()
