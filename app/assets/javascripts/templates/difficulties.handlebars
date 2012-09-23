@@ -1,5 +1,5 @@
 <section>
   {{#each difficulty in content}}
-    <p><a href="#" {{action showDifficulty difficulty}}>{{difficulty.title}}</a></p>
+    <p><button {{action showDifficulty difficulty}}>{{difficulty.title}}</button></p>
   {{/each}}
 </section>

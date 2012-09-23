@@ -1,15 +1,11 @@
-{{#if currentStep}}
-  <div id="counter">{{countdown}}</div>
+<div id="counter">{{countdown}}</div>
 
-  <section>{{currentStepHtml}}</section>
-{{else}}
-  <p><a {{action start}}>START</a></p>
-{{/if}}
+<section>{{currentStepHtml}}</section>
 
 <p>
   {{#if isPaused}}
-    <a href="#" {{action unpause}}>unpause</a>
+    <button href="#" {{action unpause}}>Unpause</button>
   {{else}}
-    <a href="#" {{action pause}}>pause</a>
+    <button href="#" {{action pause}}>Pause</button>
   {{/if}}
 </p>
