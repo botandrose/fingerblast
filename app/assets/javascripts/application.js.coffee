@@ -1,5 +1,3 @@
-#= require jquery
 #= require fingerblast
 
-$ ->
-  new Fingerblast()
+Fingerblast.initialize()

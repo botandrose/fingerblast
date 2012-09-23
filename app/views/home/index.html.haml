@@ -1,15 +1,16 @@
-#slideshow
-  #title Fingerblast!
-  #counter
-  #image
-  #boards
-    %p= link_to image_tag("metolius3d.jpg", :data => { :board_id => 0 }), "#", :title => "Metolius 3D"
-    %p= link_to image_tag("compact_wood.jpg", :data => { :board_id => 1 }), "#", :title => "compact_wood"
-    %p= link_to image_tag("pureforce.jpg", :data => { :board_id => 2 }), "#", :title => "pureforce"
-  %section
-    %p
-      %button(data-difficulty-index="0") Beginner
-    %p
-      %button(data-difficulty-index="1") Intermediate
-    %p
-      %button(data-difficulty-index="2") Advanced
+-#
+  #slideshow
+    #title Fingerblast!
+    #counter
+    #image
+    #boards
+      %p= link_to image_tag("metolius3d.jpg", :data => { :board_id => 0 }), "#", :title => "Metolius 3D"
+      %p= link_to image_tag("compact_wood.jpg", :data => { :board_id => 1 }), "#", :title => "compact_wood"
+      %p= link_to image_tag("pureforce.jpg", :data => { :board_id => 2 }), "#", :title => "pureforce"
+    %section
+      %p
+        %button(data-difficulty-index="0") Beginner
+      %p
+        %button(data-difficulty-index="1") Intermediate
+      %p
+        %button(data-difficulty-index="2") Advanced

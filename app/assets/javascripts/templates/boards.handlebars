@@ -1,0 +1,5 @@
+<div id="boards">
+  {{#each board in content}}
+    <p><a href="#" {{action showBoard board}} {{bindAttr title="board.title"}}><img {{bindAttr src="board.imagePath"}} /></a></p>
+  {{/each}}
+</div>

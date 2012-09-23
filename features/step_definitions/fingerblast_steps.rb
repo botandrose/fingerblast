@@ -1,17 +1,21 @@
 When /^I start the app$/ do
   visit "/"
+  page.driver.browser.evaluate "Ember.run.end()"
 end
 
 When /^I choose the "(.*?)" hangboard$/ do |hangboard_name|
   click_on hangboard_name
+  page.driver.browser.evaluate "Ember.run.end()"
 end
 
 When /^I choose the "(.*?)" difficulty$/ do |difficulty|
   click_on difficulty
+  page.driver.browser.evaluate "Ember.run.end()"
 end
 
 When /^I press the restart button$/ do
   click_on "Fingerblast again"
+  page.driver.browser.evaluate "Ember.run.end()"
 end
 
 When /^time advances by (\d+) seconds$/ do |seconds|

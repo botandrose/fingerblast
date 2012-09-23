@@ -2,7 +2,7 @@
 
 module CucumberRailsDebug
   def where
-    puts page.current_path
+    puts page.current_url
   end
 
   def how
