@@ -1,10 +1,28 @@
+#= require sprintf
+
 Fingerblast.Difficulty = Ember.Object.extend
+  multiplier: 1.0
+
+  formattedMultiplier: ( ->
+    sprintf "x%.1f", @get("multiplier")
+  ).property("multiplier")
+
+
+  fullTitle: ( ->
+    "#{@get('title')} x#{@get('multiplier')}"
+  ).property("multiplier", "title")
+
   isPaused: false
 
   currentStep: null
 
   currentStepHtml: ( ->
-    @get("steps")[@get("currentStep") - 1]
+    step = @get("steps")[@get("currentStep") - 1]
+    args = step[1..]
+    args = args.map (value) =>
+      Math.round value * @get("multiplier")
+    step = step[0]
+    sprintf step, args...
   ).property("steps", "currentStep")
 
   defaultCountdown: 60

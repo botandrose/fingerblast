@@ -8,8 +8,10 @@ When /^I choose the "(.*?)" hangboard$/ do |hangboard_name|
   sync
 end
 
-When /^I choose the "(.*?)" difficulty$/ do |difficulty|
-  click_on difficulty
+When /^I choose the "(.*?) (.*?)" difficulty$/ do |difficulty, multiplier|
+  within "p:contains('#{difficulty}')" do
+    click_on multiplier
+  end
   sync
 end
 

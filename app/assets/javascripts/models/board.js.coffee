@@ -13,8 +13,13 @@ Fingerblast.Board = Ember.Object.extend().reopenClass(
   ).property()
 
   difficulties: (->
-    Fingerblast.data.difficulties.filter( (difficulty) =>
+    data = Fingerblast.data.difficulties.filter( (difficulty) =>
       difficulty.boardId == @id
-    ).map (props) ->
-      Fingerblast.Difficulty.create().setProperties(props)
+    ).map( (props) ->
+      title: props.title
+      variants: [0.5, 1.0, 1.5, 2.0].map (multiplier) ->
+        props.multiplier = multiplier
+        Fingerblast.Difficulty.create().setProperties(props)
+    )
+    data
   ).property("id")

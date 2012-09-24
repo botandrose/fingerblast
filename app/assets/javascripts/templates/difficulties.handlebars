@@ -1,5 +1,11 @@
 <section>
-  {{#each difficulty in content}}
-    <p><button {{action showDifficulty difficulty}}>{{difficulty.title}}</button></p>
+  {{#each difficultyGroup in content}}
+    <p>
+      {{difficultyGroup.title}}
+      <br/>
+      {{#each difficulty in difficultyGroup.variants}}
+        <button {{action showDifficulty difficulty}}>{{difficulty.formattedMultiplier}}</button>
+      {{/each}}
+    </p>
   {{/each}}
 </section>
