@@ -43,13 +43,16 @@ Fingerblast.Difficulty = Ember.Object.extend
     window.interval = window.setInterval (=> @tick()), 1000
     @set("isPaused", false)
 
+  skip: ->
+    if @get("steps").length == @get("currentStep")
+      Fingerblast.router.transitionTo("success")
+    else
+      Fingerblast.router.transitionTo("step", @get("currentStep") + 1)
+
   # private
 
   tick: ->
     @decrementProperty("countdown")
     if @get("countdown") == 0
       window.clearInterval window.interval
-      if @get("steps").length == @get("currentStep")
-        Fingerblast.router.transitionTo("success")
-      else
-        Fingerblast.router.transitionTo("step", @get("currentStep") + 1)
+      @skip()

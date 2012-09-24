@@ -65,3 +65,6 @@ Fingerblast.Router = Ember.Router.extend
             unpause: (router, event) ->
               router.get('difficultyController.content').unpause()
 
+            skip: (router, event) ->
+              router.get('difficultyController.content').skip()
+
