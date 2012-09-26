@@ -1,0 +1,3 @@
+--compilers coffee:coffee-script
+--require spec/javascripts/spec_helper
+--globals Audio
