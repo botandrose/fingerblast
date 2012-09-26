@@ -32,7 +32,7 @@ Fingerblast.Difficulty = Ember.Object.extend
   startCountdown: ->
     @set("countdown", @defaultCountdown)
     @unpause()
-    Fingerblast.Whistle.play()
+    Fingerblast.whistle.play()
 
   pause: ->
     window.clearInterval(window.interval) if window.interval?

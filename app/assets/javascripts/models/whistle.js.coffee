@@ -1,9 +1,6 @@
-Fingerblast.Whistle = Ember.Object.extend().reopenClass
+Fingerblast.Whistle = Ember.Object.extend
+  init: ->
+    @audio = new Audio("/audios/whistle.mp3") if Audio?
+
   play: ->
-
-if Audio?
-  Fingerblast.Whistle.reopenClass
-    audio: new Audio("/audios/whistle.mp3")
-
-    play: ->
-      @audio.play()
+    @audio.play() if @audio?
