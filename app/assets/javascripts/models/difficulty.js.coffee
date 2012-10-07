@@ -19,10 +19,17 @@ Fingerblast.Difficulty = Ember.Object.extend
   currentStepHtml: ( ->
     step = @get("steps")[@get("currentStep") - 1]
     args = step[1..]
-    args = args.map (value) =>
-      Math.round value * @get("multiplier")
-    step = step[0]
-    sprintf step, args...
+    if args?
+      args = args.map (value) =>
+        Math.round value * @get("multiplier")
+      step = step[0]
+      sprintf step, args...
+    else
+      step
+  ).property("steps", "currentStep")
+
+  currentHolds: ( ->
+    @get("steps")[@get("currentStep") - 1][2]
   ).property("steps", "currentStep")
 
   defaultCountdown: 60
