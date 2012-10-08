@@ -5,3 +5,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 Fingerblast::Application.load_tasks
+
+task :mocha do
+  system "mocha"
+end
+
+task :default => :mocha
