@@ -12,6 +12,10 @@ Fingerblast.Board = Ember.Object.extend().reopenClass(
     "/assets/#{@id}.jpg"
   ).property()
 
-  difficulties: (->
-    Fingerblast.Difficulty.findAllByBoardIdGrouped @id
+  groupedDifficulties: (->
+    difficulties = Fingerblast.Difficulty.findAllByBoardId @id
+    difficulties = difficulties.groupBy "title"
+    for key, value of difficulties
+      title: key
+      variants: value
   ).property("id")

@@ -1,18 +1,19 @@
 require "fingerblast/data/data.js.coffee"
 require "fingerblast/models/board.js.coffee"
 require "fingerblast/models/difficulty.js.coffee"
+require "fingerblast/helpers/array_extensions.js"
 
 describe "Board", ->
-  describe "#difficulties", ->
+  describe "#groupedDifficulties", ->
     [subject, difficulty, variant] = [null, null, null]
 
     beforeEach ->
       subject = Fingerblast.Board.all()[0]
-      difficulty = subject.get("difficulties")[0]
+      difficulty = subject.get("groupedDifficulties")[0]
       variant = difficulty.variants[0]
 
     it "has three difficulty groups", ->
-      subject.get("difficulties").should.have.length(3)
+      subject.get("groupedDifficulties").should.have.length(3)
 
     it "has a beginner difficulty group", ->
       difficulty.should.have.property "title", "Beginner"

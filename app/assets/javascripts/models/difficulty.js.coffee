@@ -3,16 +3,16 @@
 Fingerblast.Difficulty = Ember.Object.extend().reopenClass(
   data: Fingerblast.data.difficulties
 
+  all: ->
+    @data.map (props) =>
+      @create props
+
   findAllByBoardId: (boardId) ->
-    @data.filter (difficulty) ->
+    @all().filter (difficulty) ->
       difficulty.boardId == boardId
 
-  findAllByBoardIdGrouped: (boardId) ->
-    @findAllByBoardId(boardId).map (difficulty) =>
-      title: difficulty.title
-      variants: [0.5, 1.0, 1.5, 2.0].map (multiplier) =>
-        difficulty.multiplier = multiplier
-        @create().setProperties(difficulty)
+  find: (id) ->
+    @all().find (difficulty) -> difficulty.id == id
 
 ).reopen
   multiplier: 1.0

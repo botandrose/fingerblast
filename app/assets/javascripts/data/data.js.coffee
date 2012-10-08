@@ -14,7 +14,7 @@ Fingerblast.data =
     }
   ]
 
-  difficulties: [
+  baseDifficulties: [
     {
       boardId: "metolius3d"
       id: "beginner"
@@ -154,3 +154,12 @@ Fingerblast.data =
       ]
     }
   ]
+
+  difficulties: []
+
+Fingerblast.data.baseDifficulties.forEach (props) ->
+  [0.5, 1.0, 1.5, 2.0].forEach (multiplier, index) ->
+    difficulty = JSON.parse(JSON.stringify(props)) # dup
+    difficulty.multiplier = multiplier
+    difficulty.id = "#{props.boardId}-#{props.id}-#{index}"
+    Fingerblast.data.difficulties.push difficulty
