@@ -21,12 +21,7 @@ When /^I press the restart button$/ do
 end
 
 When /^time advances by (\d+) seconds$/ do |seconds|
-  # page.driver.evaluate_script "window.clock.tick(#{seconds.to_i * 1000});"
-  seconds.to_i.times do
-    page.driver.browser.evaluate """
-      Fingerblast.router.get('difficultyController.content').tick()
-    """
-  end
+  page.driver.evaluate_script "window.clock.tick(#{seconds.to_i * 1000});"
   sync
 end
 
