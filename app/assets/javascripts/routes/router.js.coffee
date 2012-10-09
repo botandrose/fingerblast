@@ -6,15 +6,13 @@ Fingerblast.Router = Ember.Router.extend
       route: '/'
       redirectsTo: 'boards.index'
 
-    showBoards: (router, event) ->
-      router.transitionTo('root.index')
+    showBoards: Ember.Route.transitionTo('root.index')
 
     boards: Ember.Route.extend
       route: '/boards'
       connectOutlets: (router) ->
         router.get('applicationController').connectOutlet('boards', Fingerblast.Board.all())
-      showBoard: (router, event) ->
-        router.transitionTo('board.index', event.context)
+      showBoard: Ember.Route.transitionTo('board.index')
 
       index: Ember.Route.extend
         route: '/'
@@ -24,8 +22,7 @@ Fingerblast.Router = Ember.Router.extend
         connectOutlets: (router, board) ->
           router.get('applicationController').connectOutlet('board', board)
           router.get('boardController').connectOutlet('difficulties', board.get('groupedDifficulties'))
-        showDifficulty: (router, event) ->
-          router.transitionTo('difficulty.index', event.context)
+        showDifficulty: Ember.Route.transitionTo('difficulty.index')
 
         index: Ember.Route.extend
           route: '/'
