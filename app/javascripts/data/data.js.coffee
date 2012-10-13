@@ -158,7 +158,7 @@ Fingerblast.data =
   difficulties: []
 
 Fingerblast.data.baseDifficulties.forEach (props) ->
-  [0.5, 1.0, 1.5, 2.0].forEach (multiplier, index) ->
+  [0.5, 0.75, 1.0, 1.25, 1.5].forEach (multiplier, index) ->
     difficulty = JSON.parse(JSON.stringify(props)) # dup
     difficulty.multiplier = multiplier
     difficulty.id = "#{props.boardId}-#{props.id}-#{index}"

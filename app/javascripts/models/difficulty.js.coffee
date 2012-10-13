@@ -18,7 +18,7 @@ Fingerblast.Difficulty = Ember.Object.extend().reopenClass(
   multiplier: 1.0
 
   formattedMultiplier: ( ->
-    sprintf "x%.1f", @get("multiplier")
+    sprintf "x%.2f", @get("multiplier")
   ).property("multiplier")
 
 
