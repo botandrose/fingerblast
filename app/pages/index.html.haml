@@ -1,0 +1,79 @@
+!!! 5
+%html
+  %head
+    %title Fingerblast
+    %meta(name="HandheldFriendly" content="True")
+    %meta(name="viewport" content="width=device-width")
+
+    [{ stylesheet_link_tag(application) }]
+    
+  %body
+    :erb
+      <script type="text/x-handlebars" data-template-name="application">
+        <div id="container">
+          <div id="title"><a href="/">Fingerblast!</a></div>
+          {{outlet}}
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="board">
+        <div id="image">
+          <img {{bindAttr src="content.imagePath"}} />
+        </div>
+
+        {{outlet}}
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="boards">
+        <div id="boards">
+          {{#each board in content}}
+            <p><a href="#" {{action showBoard board}} {{bindAttr title="board.title"}}><img {{bindAttr src="board.imagePath"}} /></a></p>
+          {{/each}}
+        </div>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="difficulties">
+        <section>
+          {{#each difficultyGroup in content}}
+            <p>
+              {{difficultyGroup.title}}
+              <br/>
+              {{#each difficulty in difficultyGroup.variants}}
+                <button {{action showDifficulty difficulty}}>{{difficulty.formattedMultiplier}}</button>
+              {{/each}}
+            </p>
+          {{/each}}
+        </section>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="difficulty">
+        <div id="counter">{{countdown}}</div>
+
+        <section>{{currentStepHtml}}</section>
+
+        <p>
+          {{#if isPaused}}
+            <button href="#" {{action unpause}}>Unpause</button>
+          {{else}}
+            <button href="#" {{action pause}}>Pause</button>
+          {{/if}}
+
+          <button href="#" {{action skip}}>Skip</button>
+        </p>
+      </script>
+
+      <script type="text/x-handlebars" data-template-name="success">
+        <h1>Master Fingerblaster!</h1>
+
+        <button {{action showBoards}}>Fingerblast again</button>
+      </script>
+
+    :javascript
+      if('[{ environment }]' == "test") {
+        document.write("<scri" + "pt src='/test_helper.js'></sc" + "ript>");
+      }
+
+    %script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+    %script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js")
+    %script(src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.pre/ember-1.0.pre.min.js")
+    [{ javascript_include_tag(application) }]
