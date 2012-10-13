@@ -6,9 +6,18 @@ default:
 development:
   debug: true
 
-production:
+staging:
   debug: false
   digest: true
   compress: true
   deploy_strategy: local
   deploy_path: public
+
+production:
+  debug: false
+  digest: true
+  compress: true
+  deploy_strategy: s3
+  aws_key: "AKIAJVVS2XXIH75ENFYQ"
+  aws_secret: "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"
+  deploy_bucket: "www.fingerbla.st"
