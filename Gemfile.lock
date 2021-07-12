@@ -5,7 +5,8 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.0)
-    addressable (2.3.2)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     aws-sdk (1.6.9)
       httparty (~> 0.7)
       json (~> 1.4)
@@ -82,6 +83,7 @@ GEM
       faye-websocket (~> 0.4, >= 0.4.4)
       http_parser.rb (~> 0.5.3)
       multi_json (~> 1.0)
+    public_suffix (4.0.6)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
